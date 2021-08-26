@@ -5,40 +5,151 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travelling Blog</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">    
+
+    <script type="text/javascript">
+        let modalDisplayed = false;
+
+        function toggleModal() {
+            const modal = document.getElementById("modal-container");
+
+            if (modalDisplayed == false) {
+                modal.setAttribute("style", "display: block");
+                modalDisplayed = true;
+            } else {
+                modal.setAttribute("style", "display: none");
+                modalDisplayed = false;
+            }
+        }
+    </script>
 </head>
 <body class="container">
+    <div id="modal-container">
+        <div id="overlay"></div>
+        <div id="modal">
+            <h1>Add/Edit article</h1>
+            <div class="d-flex justify-content-center">
+                <input class="shortinput" type="text" placeholder="Please enter title">
+                <input class="shortinput" type="text" placeholder="Please enter category">
+            </div>
+            <div class="d-flex justify-content-center">
+                <input class="shortinput" type="text" placeholder="Please enter author">
+                <input class="shortinput" type="text" placeholder="Please enter date">
+            </div>
+            <div class="d-flex justify-content-center">
+                <input class="longinput" type="text" placeholder="Please enter image url">
+            </div>
+            <div class="d-flex justify-content-center">
+                <textarea placeholder="Please enter content"></textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-light" id="btn-cancel" onclick="toggleModal()">CANCEL</button>
+                <button class="btn btn-light" id="btn-save" onclick="toggleModal()">SAVE</button>
+            </div>
+        </div>
+    </div>
     <header>
-        <div class="d-flex justify-content-between">
-            <div class="col">
-                <button class="btn btn-light">TRAVEL UPDATES</button>
-                <button class="btn btn-light">REVIEWS</button>
-                <button class="btn btn-light">ABOUT</button>
-                <button class="btn btn-light">CONTACT</button>
+        <div class="d-flex justify-content-end" id="navbar">
+            <span>TRAVEL UPDATES</span>
+            <span>REVIEWS</span>
+            <span>ABOUT</span>
+            <span>CONTACT</span>
             </div>
-            <div class="row mt-5">
-                <button class="btn btn-light" id="btn-add">
-                    <i class="fas fa-plus me-1"></i>
-                    <span>ADD ARTICLE</span>
-                </button>
-            </div>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-light" id="btn-add" onclick="toggleModal()">
+                <i class="fas fa-plus me-1"></i>
+                <span>ADD ARTICLE</span>
+            </button>   
         </div>
     </header>
     <main>
         <h1>The complete guide to explore Transilvania, with your bike</h1>
-        <div class="d-flex justify-content-evenly details">
+        <div class="d-flex justify-content-center align-items-center details">
             <span>Destination Europe</span>
             <i class="fas fa-circle"></i>
-            <span>Added by Alexandra Luca</span>
+            <span>Added by <strong>Alexandra Luca</strong></span>
             <i class="fas fa-circle"></i>
             <span>July 01, 2018</span>
         </div>
-        <p>Edit | Delete</p>
+        <div class="d-flex justify-content-end editdelete">
+            <span>Edit | Delete</span>
+        </div>
         <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/b300_mtbMarqueeImage?wid=1200" alt="Mountain Bikes">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis pretium eros. Nullam mollis velit id odio ornare, et pretium nulla malesuada. Suspendisse tristique hendrerit tellus, non eleifend leo sollicitudin quis. Nulla a faucibus tortor. Vestibulum id nisi vehicula, maximus urna sed, dictum nibh. Fusce ac nibh vel velit tempus aliquet. Mauris et tellus in lacus lobortis dictum finibus eu leo. In quis mattis sem, id volutpat nunc. Aliquam rutrum aliquet venenatis. Donec blandit viverra nisl eget luctus. Aliquam justo elit, finibus a metus in, rhoncus suscipit neque. Nullam sem odio, faucibus et aliquam vel, hendrerit eu elit. Vestibulum eget justo pharetra, cursus urna a, vestibulum odio. Etiam malesuada nulla nec lacus vestibulum, ut malesuada ligula iaculis. Donec sodales et risus a luctus. Suspendisse placerat sed purus egestas ultrices.</p>
+        
+        <h1>Bucegi: Places you must visit before you die</h1>
+        <div class="d-flex justify-content-center align-items-center details">
+            <span>Must Visit</span>
+            <i class="fas fa-circle"></i>
+            <span>Added by Alexandra Luca</span>
+            <i class="fas fa-circle"></i>
+            <span>June 30, 2018</span>
+        </div>
+        <div class="d-flex justify-content-end editdelete">
+            <span>Edit | Delete</span>
+        </div>
+        <img src="https://lh3.googleusercontent.com/proxy/soWjJvyEPFHVNxIFEYD6wyJolGJOpeVpSeXSgLQtXyxR27Nd4jPBqByOLGTm6BEgpuvbgXzoV1sego7un5hr4lZPA9IRBvJBbfDTyhoDRRHjB72U2TgSRTwxh5QzzogcXXA7S-FUt2wXn-5QTXU" alt="Bucegi">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ante orci, commodo vitae mattis vitae, iaculis non odio. Ut laoreet quis lectus laoreet ornare. Integer dictum felis leo, quis venenatis augue lacinia eu. Morbi rhoncus quis libero sed faucibus. Nulla consequat molestie magna id porttitor. Maecenas viverra purus eget ligula convallis interdum. Nunc sagittis posuere massa sit amet sodales. Proin auctor arcu in est porta, vel blandit lectus pulvinar. Nullam eget nisl interdum, pellentesque metus sit amet, fringilla neque. Donec sit amet pellentesque purus.</p>
+    
+        <h1>Romania: The land of dreams</h1>
+        <div class="d-flex justify-content-center align-items-center details">
+            <span>Village</span>
+            <i class="fas fa-circle"></i>
+            <span>Added by Alexandra Luca</span>
+            <i class="fas fa-circle"></i>
+            <span>June 17, 2018</span>
+        </div>
+        <div class="d-flex justify-content-end editdelete">
+            <span>Edit | Delete</span>
+        </div>
+        <img src="https://cdn.getyourguide.com/img/country/58de17180b7f4.jpeg/88.jpg" alt="Romania">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida felis id libero rutrum ultrices. Phasellus euismod nec velit ut egestas. Duis vulputate aliquam facilisis. Sed sit amet lacinia elit. Praesent mollis imperdiet lacinia. Aenean vestibulum urna ex, ac auctor lorem dapibus ac. Vivamus ultricies auctor ligula, non finibus augue tristique ut. Nam lectus justo, facilisis lacinia ullamcorper sit amet, porttitor non erat. Integer ac nisi mauris. Donec condimentum tortor tortor, nec accumsan massa sagittis et. Donec ligula diam, efficitur vitae sem fermentum, gravida iaculis ipsum. Donec malesuada leo et dignissim gravida.</p>
+    
+        <h1>Sarmale - stuffed cabbage rolls</h1>
+        <h1>Good or bad?</h1>
+        <div class="d-flex justify-content-center align-items-center details">
+            <span>Food</span>
+            <i class="fas fa-circle"></i>
+            <span>Added by Alexandra Luca</span>
+            <i class="fas fa-circle"></i>
+            <span>December 29, 2017</span>           
+        </div>
+        <div class="d-flex justify-content-end editdelete">
+            <span>Edit | Delete</span>
+        </div>
+        <img src="https://retete.unica.ro/wp-content/uploads/2010/10/S%C4%83rm%C4%83lu%C8%9Be-tradi%C8%9Bionale.jpg" alt="Sarmale">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam facilisis, tellus et condimentum commodo, nulla erat bibendum arcu, et cursus nunc massa nec diam. In nisl tortor, fermentum a tempus non, interdum sed arcu. Etiam non dolor vitae est faucibus vehicula. Suspendisse potenti. Curabitur vestibulum tellus purus, sed dignissim ligula vehicula eleifend. Nullam at metus nec diam pellentesque ultricies. Duis dapibus venenatis dolor at congue. Ut consequat accumsan ex vitae convallis.</p>
+    
+        <h1>Maramures: 5 experiences that you can't miss</h1>
+        <div class="d-flex justify-content-center align-items-center details">
+            <span>Must Visit</span>
+            <i class="fas fa-circle"></i>
+            <span>Added by Alexandra Luca</span>
+            <i class="fas fa-circle"></i>
+            <span>November 29, 2017</span>           
+        </div>
+        <div class="d-flex justify-content-end editdelete">
+            <span>Edit | Delete</span>
+        </div>
+        <img src="https://romania-active.com/ex/images/20418_walking%20tours%20holidays%20romania%20sejour%20randonnee%20maramures%20%20(1).jpg" alt="Maramures">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet laoreet malesuada. Vivamus tristique dui ac eros dignissim ornare. Etiam ligula est, euismod a cursus eu, condimentum quis ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra gravida dui, nec auctor ligula scelerisque eget. Aenean posuere purus quis ante mattis tempor. Phasellus posuere, diam placerat condimentum porttitor, nisi ante lacinia tellus, at facilisis ex justo eget odio. Nulla vel nulla leo. Vivamus est erat, pulvinar vehicula lobortis id, ornare in libero. Vestibulum sit amet volutpat sem, at placerat est. In feugiat leo id laoreet ornare. Curabitur lobortis tincidunt ligula, vitae dignissim dolor rhoncus id. Nullam a aliquet nisi, in elementum ligula. Integer at accumsan tortor, sit amet finibus nunc.</p>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="d-flex justify-content-between" id="footer">
+            <span>previous</span>
+            <span>next</span>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,3 +1,7 @@
+* {
+    font-family: "Montserrat";
+}
+
 #btn-add {
     width: 300px;
     height: 60px;
@@ -6,7 +10,23 @@
     margin-bottom: 90px;
 }
 
+#navbar {
+    padding-top: 100px;
+    padding-bottom: 130px;
+}
+
+#navbar span {
+    margin-left: 100px;
+}
+
+.fa-circle {
+    font-size: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 h1 {
+    margin: auto;
     width: 780px;
     text-align: center;
     color: #1e1e1e;
@@ -21,13 +41,125 @@ h1 {
 }
 
 p {
+    text-align: justify;
+    font-family: "Cardo";
+
     color: #1e1e1e;
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    width: 780px;
+    line-height: 1.9;
+    text-align: justify;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+p:last-of-type {
+    padding-bottom: 35px;
 }
 
 img {
     height: 720px;
     width: 1280px;
     margin-bottom: 80px;
+}
+
+#footer {
+    width: 1280px;
+    color: #1e1e1e;
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 100px;
+    font-weight: bold;
+}
+
+.editdelete {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+header {
+    margin-right: 20px;
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: #88888888;
+}
+
+#modal {
+    width: 1000px;
+    height: 750px;
+    background-color: #FFFFFF;
+    border: 1px solid #9B9B9B;
+    box-shadow: 0 0 26px 6px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -375px; /* Negative half of height. */
+    margin-left: -500px; /* Negative half of width. */
+}
+
+.shortinput, .longinput {
+    padding-left: 10px;
+    line-height: 35px;
+    margin-bottom: 25px; 
+}
+
+.shortinput {
+    width: 400px;
+}
+
+.shortinput:last-of-type {
+    margin-left: 50px;
+}
+
+input, textarea {
+    border: 1px solid #9B9B9B;
+    border-radius: 5px;
+}
+
+.longinput {
+    width: 850px;
+}
+
+textarea {
+    width: 850px;
+    font-size: 18px;
+    line-height: 1.4;
+    height: 300px;
+    padding: 10px;
+}
+
+#modal h1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: "Montserrat"
+}
+
+#modal button {
+    border-radius: 25px;
+    border: 1px solid #9B9B9B;
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+#modal #btn-cancel {
+    margin-left: 75px;
+}
+
+#modal #btn-save {
+    margin-right: 75px;
+    background-color: #FFE3E3;
+}
+
+#modal-container {
+    display: none;
 }
